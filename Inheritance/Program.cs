@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Inheritance
 {
@@ -6,34 +7,35 @@ namespace Inheritance
     {
         static void Main(string[] args)
         {
-            // TODO Be sure to follow best practice when creating your classes
 
-            // Create a class Animal
-            // give this class 4 members that all Animals have in common
-
-
-            // Create a class Bird
-            // give this class 4 members that are specific to Bird
-            // Set this class to inherit from your Animal Class
-
-            // Create a class Reptile
-            // give this class 4 members that are specific to Reptile
-            // Set this class to inherit from your Animal Class
+            var swan = new Bird();
+            swan.Name = "Swan";
+            swan.Age = 7;
+            swan.CanMove = true;
+            swan.FeatherColor = "white";
+            swan.ConsumedByHumans = false;
+            swan.HasBeak = false;
+            swan.WebbedFeet = true;
+            swan.Diet = "herbivore";
 
 
+            var lizard = new Reptile();
+            lizard.Name = "Komodo Dragon";
+            lizard.Age = 20;
+            lizard.CanMove = true;
+            lizard.ScaleColor = "yellow-gray";
+            lizard.HasLegs = true;
+            lizard.LaysEggs = true;
+            lizard.TailLength = 9;
+            lizard.Diet = "carnivore";
 
+            var wildlifePark = new List<Animal>() { swan, lizard };
 
-            /*Create an object of your Bird class
-             *  give values to your members using the object of your Bird class
-             *  
-             * Creatively display the class member values 
-             */
+            foreach(var animal in wildlifePark)
+            {
+                Console.WriteLine($"This is a {animal.Name} and it is a {animal.Diet}. Believe it or not, this critter is {animal.Age} years old!");
+            }
 
-            /*Create an object of your Reptile class
-             *  give values to your members using the object of your Reptile class
-             *  
-             * Creatively display the class member values 
-             */
         }
     }
 }
